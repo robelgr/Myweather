@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 // serve the public dir 
 const app = express()
+const port = process.env.PORT || 3000
 const publicdir = path.join(__dirname, '../public')
 app.use(express.static(publicdir))
 // pointing to the right views dir 
@@ -68,6 +69,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(31000, () => {
-    console.log('server is up and running');
+app.listen(port, () => {
+    console.log('server is up and running on port ' + port);
 })

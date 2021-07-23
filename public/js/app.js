@@ -9,7 +9,7 @@ weatherform.addEventListener('submit', (e) => {
     e.preventDefault()
     const userinput = inputfield.value
     message.textContent = "loading..."
-    fetch(`http://localhost:31000/weather?address=${userinput}`).then(res => {
+    fetch(`weather?address=${userinput}`).then(res => {
         res.json().then(data => {
             if (data.error) {
                 error_message_one.textContent = data.error
